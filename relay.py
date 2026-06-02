@@ -37,7 +37,7 @@ def get_top_processes(sort_by: str = "cpu"):
     label = "CPU" if key == "cpu_percent" else "Memory"
     result = f"Top 10 processes by {label}:\n"
     for p in top:
-        result += f"{p['name']} — {p[key]:.1f}%\n"
+        result += f"{p['name']} — {p[key] or 0:.1f}%\n"
     return result
 
 def get_memory_detail():
