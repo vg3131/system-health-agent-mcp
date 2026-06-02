@@ -8,7 +8,7 @@ from fastapi import FastAPI, WebSocket
 from mcp.server.fastmcp import FastMCP
 import uuid
 
-mcp = FastMCP("system health agent")
+mcp = FastMCP("system health agent", auth=None)
 app = FastAPI()
 
 relay_ws = None
