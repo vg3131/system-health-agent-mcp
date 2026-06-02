@@ -84,7 +84,7 @@ handlers = {
 }
 
 async def main():
-    async with websockets.connect("ws://localhost:8000/ws/relay") as ws:
+    async with websockets.connect("wss://web-production-b4b1a.up.railway.app/ws/relay") as ws:
         while True:
             message = json.loads(await ws.recv())
             result = handlers[message["tool"]](**message["args"])
