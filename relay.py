@@ -1,5 +1,5 @@
 # relay.py
-# Runs on your Mac — dials out to cloud_server.py via WebSocket
+# Runs on Mac — dials out to cloud_server.py via WebSocket
 # Listens for tool call requests, executes psutil locally, returns results
 
 import asyncio
