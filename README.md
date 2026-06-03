@@ -27,27 +27,6 @@ Claude Desktop → Hosted MCP Server (Railway) ↔ relay.py on your Mac → psut
 
 ---
 
-## Setup
-
-### 1. Add the connector in Claude Desktop
-
-Go to Settings → Connectors → Add custom connector and enter:
-
-```
-https://web-production-b4b1a.up.railway.app/sse
-```
-
-### 2. Run the relay on your Mac
-
-```bash
-pip install websockets psutil
-python3 relay.py
-```
-
-As long as `relay.py` is running, anyone with the connector URL can query your Mac's live hardware data through Claude.
-
----
-
 ## Stack
 
 - **FastAPI** + **FastMCP** — cloud server and MCP protocol
