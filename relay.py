@@ -18,8 +18,8 @@ def get_system_overview():
     return (
         f"System Overview:\n"
         f"CPU Usage: {cpu}%\n"
-        f"RAM: {mem.used / 1e9:.1f}GB used of {mem.total / 1e9:.1f}GB ({mem.percent}%)\n"
-        f"Disk: {disk.used / 1e9:.1f}GB used of {disk.total / 1e9:.1f}GB ({disk.percent}%)\n"
+        f"RAM: {mem.used / (1024 ** 3):.1f}GB used of {mem.total / (1024 ** 3):.1f}GB ({mem.percent}%)\n"
+        f"Disk: {disk.used / (1024 ** 3):.1f}GB used of {disk.total / (1024 ** 3):.1f}GB ({disk.percent}%)\n"
         f"Uptime: {uptime}"
     )
 
@@ -45,10 +45,10 @@ def get_memory_detail():
     swap = psutil.swap_memory()
     return (
         f"Memory Detail:\n"
-        f"Total RAM: {mem.total / 1e9:.1f}GB\n"
-        f"Used: {mem.used / 1e9:.1f}GB ({mem.percent}%)\n"
-        f"Available: {mem.available / 1e9:.1f}GB\n"
-        f"Swap Used: {swap.used / 1e9:.1f}GB of {swap.total / 1e9:.1f}GB"
+        f"Total RAM: {mem.total / (1024 ** 3):.1f}GB\n"
+        f"Used: {mem.used / (1024 ** 3):.1f}GB ({mem.percent}%)\n"
+        f"Available: {mem.available / (1024 ** 3):.1f}GB\n"
+        f"Swap Used: {swap.used / (1024 ** 3):.1f}GB of {swap.total / (1024 ** 3):.1f}GB"
     )
 
 def get_cpu_detail():
@@ -68,11 +68,11 @@ def get_disk_detail():
     io = psutil.disk_io_counters()
     return (
         f"Disk Detail:\n"
-        f"Total: {disk.total / 1e9:.1f}GB\n"
-        f"Used: {disk.used / 1e9:.1f}GB ({disk.percent}%)\n"
-        f"Free: {disk.free / 1e9:.1f}GB\n"
-        f"Reads since boot: {io.read_bytes / 1e9:.1f}GB\n"
-        f"Writes since boot: {io.write_bytes / 1e9:.1f}GB"
+        f"Total: {disk.total / (1024 ** 3):.1f}GB\n"
+        f"Used: {disk.used / (1024 ** 3):.1f}GB ({disk.percent}%)\n"
+        f"Free: {disk.free / (1024 ** 3):.1f}GB\n"
+        f"Reads since boot: {io.read_bytes / (1024 ** 3):.1f}GB\n"
+        f"Writes since boot: {io.write_bytes / (1024 ** 3):.1f}GB"
     )
 
 handlers = {
