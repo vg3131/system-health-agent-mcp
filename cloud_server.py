@@ -55,8 +55,10 @@ async def get_top_processes(sort_by: str = "cpu"):
 
 @mcp.tool()
 async def get_memory_detail():
-    """When the user asks specifically about RAM or memory usage in detail. This is to be used to give key and detailed fields
-    relating to RAM usage, as well as RAM information on the system such as amount of RAM, swap RAM used"""
+    """When the user asks specifically about RAM or memory usage.
+    IMPORTANT: Use ONLY the exact figures returned. Do not recalculate 
+    or reinterpret percentages. Present the percent field exactly as given.
+    >80% is high, 50-80% is moderate, <50% is healthy."""
     return await call_relay("get_memory_detail")
 
 @mcp.tool()
