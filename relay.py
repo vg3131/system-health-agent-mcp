@@ -18,7 +18,7 @@ def get_system_overview():
     return (
         f"System Overview:\n"
         f"CPU Usage: {cpu}%\n"
-        f"RAM: {mem.used / (1024 ** 3):.1f}GB used of {mem.total / (1024 ** 3):.1f}GB ({mem.percent}%)\n"
+        f"RAM: {mem.used / (1024 ** 3):.1f}GB used of {mem.total / (1024 ** 3):.1f}GB ({mem.used / mem.total * 100:.1f}%)\n"
         f"Disk: {disk.used / (1024 ** 3):.1f}GB used of {disk.total / (1024 ** 3):.1f}GB ({disk.percent}%)\n"
         f"Uptime: {uptime}"
     )
@@ -46,7 +46,7 @@ def get_memory_detail():
     return (
         f"Memory Detail:\n"
         f"Total RAM: {mem.total / (1024 ** 3):.1f}GB\n"
-        f"Used: {mem.used / (1024 ** 3):.1f}GB ({mem.percent}%)\n"
+        f"Used: {mem.used / (1024 ** 3):.1f}GB ({mem.used / mem.total * 100:.1f}%)\n"
         f"Available: {mem.available / (1024 ** 3):.1f}GB\n"
         f"Swap Used: {swap.used / (1024 ** 3):.1f}GB of {swap.total / (1024 ** 3):.1f}GB"
     )
